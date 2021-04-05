@@ -1,0 +1,343 @@
+//.header-hide-menu{
+//  display: block!important;
+//}
+
+//??
+.desktop-category-link{
+  @media (max-width: $md) {
+    display: none!important;
+  }
+}
+
+.header-hide-menu{
+  @media (max-width: $md) {
+    z-index: 999;
+    height: calc(100vh - var(--menu-top-h));
+    width: 100vw;
+    background-color: $white;
+  }
+}
+body{
+  &.fixed2 {
+    @media (max-width: $md) {
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 999;
+    }
+  }
+}
+
+.sb_nav_box{
+  border: none!important;
+  @media (max-width: $md) {
+    border: none!important;
+  }
+  & > ul{
+    & > li{
+      position: static;
+      @media (max-width: $md) {
+        display: flex;
+      }
+      & > a{
+        &:after{
+          @media (max-width: $md) {
+            content: none!important;
+          }
+        }
+      }
+    }
+  }
+}
+.sb_nav{
+  & > li{
+    @media (max-width: $md) {
+      position: relative!important;
+    }
+  }
+  li:hover{
+    .menu-dd{
+      transform: scaleY(1);
+    }
+  }
+}
+
+.menu-dd-mob{
+  display: none;
+  @media (max-width: $md) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: absolute;
+    padding: 0 15px;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin-left: auto;
+  }
+
+  img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.header-hide-menu .sb_nav_box{
+  min-width: 100% !important;
+  width: 100% !important;
+  //@media (min-width: $md) {
+  //  width: 250px;
+  //}
+  //@media (min-width: $lg) {
+  //  min-width: 320px;
+  //}
+}
+
+.sb_nav_box li a::after {
+  background-image: url(img/ico/nav_arr.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: "";
+  float: right;
+  height: 9px;
+  margin: 5px 18px 0px 0px;
+  width: 5px;
+}
+
+.menu-dd{
+  a{
+    height: auto!important;
+  }
+
+  @media (max-width: $md) {
+    position: fixed;
+    top: var(--menu-top-h);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--menu-top-h));
+    overflow: auto;
+
+    transform: scaleY(0)!important;
+    &.active{
+      transform: scaleY(1)!important;
+    }
+  }
+
+  transition: all .3s;
+  transform-origin: top center;
+  //!!
+  transform: scaleY(0);
+  //transform: scaleY(1);
+
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 100%;
+
+  //width: calc(97vw - 100%);
+  @media (min-width: $xl) {
+    width: calc(98.5vw - 100%)!important;
+  }
+
+  @media (min-width: 1621px) {
+    width: calc(1570px - 100%)!important;
+  }
+
+  background-color: $white;
+  border: 1px solid $gray-600;
+
+  @media (min-width: $xl) {
+    display: flex;
+  }
+
+  *{
+    font-family: 'Open Sans', sans-serif!important;
+  }
+
+  &__popular-col{
+    flex-shrink: 0;
+    width: 230px;
+    padding: 15px;
+    border-right: 1px solid $gray-600;
+
+    display: none;
+    @media (min-width: $xl) {
+      display: block;
+    }
+  }
+  &__p-title{
+    width: 200px;
+    color: $gray-800;
+    font-size: 17px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  &__p-categories{
+    position: static!important;
+    border:none!important;
+    padding: 0!important;
+    margin: 0!important;
+    top: unset!important;
+    left: unset!important;
+    right: unset!important;
+    bottom: unset!important;
+
+    display: block!important;
+    li{
+      display: block;
+      padding: 0!important;
+      margin: 0 0 5px!important;
+      a{
+        padding: 0!important;
+        margin: 0!important;
+
+        color: $gray-610;
+        &:hover{
+          color: darken($gray-610, 5);
+        }
+        font-size: 15px;
+        //font-weight: bold;
+        line-height: (27.79/15);
+      }
+    }
+  }
+  &__main-col{
+    width: 100%;
+    @media (min-width: $xl) {
+      min-width: 570px;
+      flex-grow: 1;
+    }
+    padding: 15px;
+    border-right: 1px solid $gray-600;
+
+
+  }
+  //
+  &__row{
+    display:flex;
+    flex-wrap: wrap;
+
+    & > *{
+      padding-bottom: 15px!important;
+    }
+
+
+    @media (min-width: $sm) {
+      margin-bottom: 15px;
+      border-bottom: 1px solid $gray-600;
+    }
+    padding-bottom: 15px;
+    &:last-child{
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  &__col{
+    width: 100%;
+    @media (min-width: $sm) {
+      width: calc(100% / 3);
+    }
+
+    color: $oragne;
+    padding: 0 15px;
+  }
+  //
+  &__sub-title{
+    color: $oragne;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  //stays here to fight default style priority
+  ul.menu-dd__list{
+    display: block!important;
+    visibility: unset!important;
+    width: 100% !important;
+
+    position: static!important;
+    border:none!important;
+    padding: 0 0 0 4px!important;
+    margin: 0!important;
+    top: unset!important;
+    left: unset!important;
+    right: unset!important;
+    bottom: unset!important;
+
+    li{
+      display: flex;
+      align-items: flex-start;
+      &:before{
+        flex-shrink: 0;
+        content: '>';
+        margin-top: 3px;
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        color: $gray-400;
+      }
+      padding: 0!important;
+      margin: 0 0 5px!important;
+
+      a{
+        padding: 0!important;
+        margin: 0!important;
+
+        color: $gray-610;
+        &:hover{
+          color: darken($gray-610, 5);
+        }
+        font-size: 13px;
+        line-height: (15/13);
+      }
+    }
+  }
+  &__baner-col{
+    flex-shrink: 0;
+    width: 230px;
+    img{
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+    display: none;
+    @media (min-width: 1621px) {
+      display: block;
+    }
+  }
+  //mob-back
+  &__mob-back{
+    background: $gray-400;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    margin: -15px -15px 10px;
+
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+  &__mb-arrow{
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-180deg);
+    margin-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__{}
+  &__{}
+  &__{}
+}

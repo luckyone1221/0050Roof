@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /admin/
+
+Disallow: /mail.php/
+Host: 1technodom.ru
