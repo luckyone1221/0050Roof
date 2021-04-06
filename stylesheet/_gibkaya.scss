@@ -1,0 +1,62 @@
+.catalogItem{
+  --select-arrow-r: 10px;
+  &__title{
+
+  }
+  &__t-row{
+    @include roww(12px);
+    & > *{
+      margin-bottom: 12px;
+    }
+    margin-bottom: -12px;
+  }
+  &__order-btn{
+    cursor: pointer;
+  }
+  select.catalogItem__select{
+    @include mt();
+    cursor: pointer;
+    padding: 7px 40px 7px 8px;
+    font-size: 14px;
+    border-radius: 5px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    background-position-x: calc(100% - var(--select-arrow-r, 10px)) !important;
+    background-position-y: center!important;
+    background-image: url(../i/chevron-down-red.png) !important;
+    background-repeat: no-repeat!important;
+    background-size: 15px;
+
+    border: 1px solid #e9e9e9!important;
+    &:focus, &:hover, &:active{
+      border: 1px solid #f7bbc2!important;
+      box-shadow: none!important;
+      outline: none!important;
+    }
+  }
+  &__slider-box,
+  .catalogItem-prop-js,
+  .catalogItem-price-js{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  &__dt-col{
+    @media (min-width: 768px) {
+      margin-left: auto;
+    }
+  }
+  &__description-toggle{
+    @media (min-width: 768px) {
+      padding-right: calc(31px + var(--select-arrow-r, 10px));
+      &:before{
+        right: var(--select-arrow-r, 10px);
+      }
+    }
+  }
+  &__{}
+}
