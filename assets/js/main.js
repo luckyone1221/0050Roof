@@ -12981,13 +12981,17 @@ $(function () {
     let sliderBoxes = parent.querySelectorAll('.slider-box-js');
     for (let box of sliderBoxes){
       if (box.getAttribute('data-select-for') === selectVal){
-        $(box).addClass('active');
-        window.setTimeout(function(){
-          $(box).find('.slick-catalog-js').slick('refresh');
-        }, 10)
+        $(box).fadeIn(function (){
+          $(box).addClass('active');
+          window.setTimeout(function(){
+            $(box).find('.slick-catalog-js').slick('refresh');
+          }, 10)
+        });
       }
       else{
-        $(box).removeClass('active');
+        $(box).fadeOut(function (){
+          $(box).removeClass('active');
+        })
       }
     }
     //others
