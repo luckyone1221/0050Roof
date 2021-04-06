@@ -1,15 +1,22 @@
 .catalogItem{
   --select-arrow-r: 10px;
   overflow: hidden;
+
+
+  &__holder{
+    @media (max-width: 992px) {
+      top: 20px;
+    }
+  }
   &__title{
 
   }
   &__t-row{
     @include roww(12px);
     & > *{
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
-    margin-bottom: -12px;
+    margin-bottom: -8px;
 
     padding-bottom: 12px;
   }

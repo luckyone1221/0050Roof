@@ -20,7 +20,7 @@ gulp.task('sass', function() { // Создаем таск Sass
 		.pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
 		.pipe(autoprefixer(['last 15 versions', '> 1%'], { cascade: true })) // Создаем префиксы
 		.pipe(cleanCSS())// очистка от мусора
-		.pipe(gulp.dest('assets/css/')) // Выгружаем результата в папку
+		.pipe(gulp.dest('public/assets/css/')) // Выгружаем результата в папку
 });
 
 gulp.task('watch', function() {
