@@ -1,6 +1,7 @@
 <?php
 //Принимаем постовые данные
-$whatever=$_POST['whatever'];
+$title=$_POST['title'];
+$pack=$_POST['pack'];
 $name=$_POST['name'];
 $tell=$_POST['tell'];
 //Тут указываем на какой ящик посылать письмо
@@ -11,7 +12,8 @@ $to = "89634773473@mail.ru, spike.mgn@gmail.com, rocketsstat@yandex.ru";
 $subject = "Заявка с сайта Технодом";
 // Сообщение письма
 $message = "
-Форма, которую заполнил клиент: ".htmlspecialchars($whatever)."<br />
+Название карточки: ".htmlspecialchars($title)."<br/>
+Покрытие: ".htmlspecialchars($pack)."<br/>
 Имя пользователя: ".htmlspecialchars($name)."<br />
 Телефон: <a href='tel:$tell'>".htmlspecialchars($tell)."</a>";
 // Отправляем письмо при помощи функции mail();

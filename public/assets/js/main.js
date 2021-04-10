@@ -12916,8 +12916,7 @@ $(function () {
 
   link.on('click', function () {
     formHeaderName.text($(this).attr('data-header-name')),
-      formButtonName.text($(this).attr('data-button-name'));
-
+    formButtonName.text($(this).attr('data-button-name'));
   });
 
   // Переносим данные из html кнопки в html форму
