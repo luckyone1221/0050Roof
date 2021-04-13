@@ -12938,10 +12938,18 @@ $(function () {
     var href = that.attr('href');
 
     var formTitle = this.getAttribute('data-form-title');
-    let formPack = this.getAttribute('data-form-pack');
+
+    let parent = this.closest('.catalogItem-js');
+    let select = parent.querySelector('.catalog-select-js');
+    let selectVal = $(select).val();
 
     $('input[name="title"]').val(formTitle);
-    $('input[name="pack"]').val(formPack);
+    if (selectVal){
+      $('input[name="pack"]').val(selectVal);
+    }
+    else{
+      $('input[name="pack"]').val('-');
+    }
 
     $('input[type=text]').focus();
 
