@@ -12937,12 +12937,11 @@ $(function () {
     let that = $(this);
     var href = that.attr('href');
 
-    var formTitle = that.attr('data-form-title');
-    let formPack = that.attr('data-form-pack');
+    var formTitle = this.getAttribute('data-form-title');
+    let formPack = this.getAttribute('data-form-pack');
 
     $('input[name="title"]').val(formTitle);
     $('input[name="pack"]').val(formPack);
-
 
     $('input[type=text]').focus();
 
@@ -13004,8 +13003,10 @@ $(function () {
       }
     }
     //-make btn
-    let btn = parent.querySelector('.js-modal-btn');
-    btn.setAttribute('data-form-pack', selectVal);
+    let btns = parent.querySelectorAll('.js-modal-btn');
+    for (let btn of btns){
+      btn.setAttribute('data-form-pack', selectVal);
+    }
   }
 
 
