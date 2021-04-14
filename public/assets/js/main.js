@@ -12943,9 +12943,13 @@ $(function () {
     let select = parent.querySelector('.catalog-select-js');
     let selectVal = $(select).val();
 
+    function myNewFunction(sel) {
+      return sel.options[sel.selectedIndex].text;
+}
+
     $('input[name="title"]').val(formTitle);
     if (selectVal){
-      $('input[name="pack"]').val(selectVal);
+      $('input[name="pack"]').val(myNewFunction(select));
     }
     else{
       $('input[name="pack"]').val('-');
